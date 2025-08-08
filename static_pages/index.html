@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriBot — Sua Nutrição, Finalmente Simples</title>
+  <meta name="description" content="Cansado de apps complicados? Com o NutriBot, você acompanha sua nutrição com fotos e áudios no WhatsApp. Simples, humano e inteligente. Comece agora!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+  </style>
+</head>
+<body class="bg-[#f0f9ff] text-[#1a202c] antialiased">
+
+  <!-- Hero -->
+  <section class="relative text-white h-[85vh] min-h-[600px] flex items-center justify-center">
+    <img src="./images/landing_photo.jpg"
+         alt="Pessoa feliz desfrutando de uma refeição saudável em um ambiente claro e iluminado"
+         class="absolute inset-0 w-full h-full object-cover opacity-80 blur-sm">
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="bg-white/95 backdrop-blur-sm text-[#1a202c] text-center rounded-2xl shadow-2xl p-8 md:p-12 max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">Sua nutrição, finalmente simples.</h1>
+        <p class="mt-4 text-lg text-[#1a202c]/80 max-w-xl mx-auto">
+          Cansado de apps complicados? Descubra a maneira mais fácil e humana de cuidar da sua alimentação.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20minha%20jornada%20com%20o%20NutriBot!"
+             target="_blank"
+             class="inline-block px-10 py-4 bg-[#d97706] text-white font-bold text-lg rounded-full shadow-lg hover:opacity-90 transform hover:scale-105 transition-all duration-300">
+            Começar minha jornada
+          </a>
+          <a href="#precos"
+             class="inline-block px-10 py-4 bg-[#059669] text-white font-bold text-lg rounded-full shadow-lg hover:opacity-90 transform hover:scale-105 transition-all duration-300">
+            Começar Agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona (cards) -->
+  <section class="py-20 md:py-28 bg-gradient-to-b from-emerald-50 via-green-50 to-emerald-100">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold">A maneira mais fácil e humana de entender o que você come.</h2>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-[#059669] rounded-3xl p-8 text-white relative overflow-hidden">
+          <div class="flex justify-center mb-6">
+            <div class="relative rotate-6">
+              <div class="w-64 h-80 bg-white rounded-3xl shadow-2xl p-4">
+                <div class="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-[#059669]/20 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span class="text-2xl">📸</span>
+                    </div>
+                    <p class="text-sm text-gray-600 font-medium">Foto da Refeição</p>
+                    <p class="text-xs text-gray-500 mt-1">Envie uma foto</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white text-[#059669] px-4 py-2 rounded-lg inline-block mb-4">
+            <h3 class="text-xl font-bold">Registro por Foto ou Áudio, direto no WhatsApp</h3>
+          </div>
+          <div class="text-center">
+            <p class="text-white/90 mb-6 leading-relaxed">Envie uma foto ou um áudio do que você comeu diretamente no WhatsApp. É simples como conversar com um amigo.</p>
+            <a href="#" class="inline-block bg-white text-[#059669] font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">Saiba Mais</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[#10b981] rounded-3xl p-8 text-white relative overflow-hidden">
+          <div class="flex justify-center mb-6">
+            <div class="relative -rotate-6">
+              <div class="w-64 h-80 bg-white rounded-3xl shadow-2xl p-4">
+                <div class="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-[#10b981]/20 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span class="text-2xl">📊</span>
+                    </div>
+                    <p class="text-sm text-gray-600 font-medium">Seus Insights</p>
+                    <p class="text-xs text-gray-500 mt-1">Macronutrientes</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white text-[#10b981] px-4 py-2 rounded-lg inline-block mb-4">
+            <h3 class="text-xl font-bold">Insights Inteligentes</h3>
+          </div>
+          <div class="text-center">
+            <p class="text-white/90 mb-6 leading-relaxed">Receba análises e relatórios visuais no seu WhatsApp. Entenda seus macronutrientes e veja seu progresso de forma intuitiva.</p>
+            <a href="#" class="inline-block bg-white text-[#10b981] font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">Saiba Mais</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#d97706] rounded-3xl p-8 text-white relative overflow-hidden">
+          <div class="flex justify-center mb-6">
+            <div class="relative rotate-3">
+              <div class="w-64 h-80 bg-white rounded-3xl shadow-2xl p-4">
+                <div class="w-full h-full bg-gray-100 rounded-2xl flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-[#d97706]/20 rounded-full mx-auto mb-3 flex items-center justify-center">
+                      <span class="text-2xl">🌟</span>
+                    </div>
+                    <p class="text-sm text-gray-600 font-medium">Clube VIP</p>
+                    <p class="text-xs text-gray-500 mt-1">Benefícios Exclusivos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white text-[#d97706] px-4 py-2 rounded-lg inline-block mb-4">
+            <h3 class="text-xl font-bold">Clube VIP</h3>
+          </div>
+          <div class="text-center">
+            <p class="text-white/90 mb-6 leading-relaxed">Faça parte do nosso grupo exclusivo com desafios semanais, receitas especiais, descontos em parceiros e muito mais para transformar sua rotina.</p>
+            <a href="#" class="inline-block bg-white text-[#d97706] font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">Entrar na Lista de Espera</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vídeo explicativo -->
+  <section class="relative py-20 md:py-28 bg-gradient-to-b from-emerald-50 via-green-50 to-emerald-100 overflow-hidden">
+    <div class="flex h-full min-h-[600px]">
+      <div class="w-3/5 h-full relative">
+        <video src="./videos/landing_video.mp4" autoplay loop muted class="w-full h-full object-cover grayscale"></video>
+        <div class="absolute inset-0 bg-[#059669]/10"></div>
+      </div>
+      <div class="w-2/5 flex items-center justify-center px-8 bg-white">
+        <div class="max-w-md">
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Inteligência a serviço da sua saúde.</h2>
+          <p class="text-lg text-[#1a202c]/80 leading-relaxed mb-6">Nossa IA não apenas conta calorias. Ela identifica padrões no seu dia a dia, oferece insights práticos e aprende com suas preferências para te ajudar a construir hábitos mais saudáveis e duradouros.</p>
+          <a href="#" class="inline-block px-8 py-3 bg-[#d97706] text-white font-bold rounded-full shadow-lg hover:opacity-90 transition-opacity">Conheça a tecnologia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção empresas/parcerias (resumo) -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-semibold text-[#059669]">PARA EMPRESAS E PROFISSIONAIS</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold">Potencialize seu negócio com o NutriBot</h2>
+        <p class="mt-4 text-lg text-[#1a202c]/70 max-w-2xl mx-auto">Ofereça um diferencial tecnológico e aumente a retenção de clientes e colaboradores.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-[#f0f9ff] rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-[#059669]/10 flex items-center justify-center">
+              <span class="text-2xl text-[#059669]">🏢</span>
+            </div>
+            <h3 class="text-xl font-bold">Soluções Corporativas</h3>
+          </div>
+          <p class="text-[#1a202c]/80 mb-6">Planos para equipes, relatórios gerenciais e suporte dedicado para transformar a saúde nutricional da sua empresa.</p>
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20as%20solu%C3%A7%C3%B5es%20corporativas%20do%20NutriBot." class="inline-block text-[#d97706] font-bold hover:underline transition-opacity">Falar com Vendas →</a>
+        </div>
+        <div class="bg-[#f0f9ff] rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-[#d97706]/10 flex items-center justify-center">
+              <span class="text-2xl text-[#d97706]">💛</span>
+            </div>
+            <h3 class="text-xl font-bold">Parcerias para Academias & Clínicas</h3>
+          </div>
+          <p class="text-[#1a202c]/80 mb-6">Ofereça NutriBot como um diferencial exclusivo, justifique preços premium e aumente a retenção de clientes.</p>
+          <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20as%20parcerias%20com%20academias%20e%20cl%C3%ADnicas." class="inline-block text-[#d97706] font-bold hover:underline transition-opacity">Ver Planos de Parceria →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 md:py-28 bg-gradient-to-b from-emerald-50 via-green-50 to-emerald-100">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-semibold text-[#059669]">PERGUNTAS FREQUENTES</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold">Ainda tem dúvidas?</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="bg-white rounded-2xl border border-gray-200/60 overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center group" data-faq-toggle>
+            <h3 class="text-lg font-bold group-hover:text-[#059669] transition-colors">O NutriBot substitui um nutricionista?</h3>
+            <svg class="w-6 h-6 text-[#1a202c]/50 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <p class="p-6 pt-0 text-[#1a202c]/80">Não. O NutriBot é uma ferramenta poderosa para te ajudar a seguir o plano do seu nutricionista com precisão e consciência. Ele funciona como o complemento perfeito para a sua jornada, mas não substitui a orientação profissional personalizada.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200/60 overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center group" data-faq-toggle>
+            <h3 class="text-lg font-bold group-hover:text-[#059669] transition-colors">Como o NutriBot me ajuda a perder peso?</h3>
+            <svg class="w-6 h-6 text-[#1a202c]/50 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <p class="p-6 pt-0 text-[#1a202c]/80">Aumentando sua consciência alimentar. Ao registrar o que você come de forma fácil, você naturalmente faz escolhas melhores. Nossos relatórios mostram padrões que você nem percebia, te dando o poder de mudar e atingir seus objetivos de peso.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200/60 overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center group" data-faq-toggle>
+            <h3 class="text-lg font-bold group-hover:text-[#059669] transition-colors">É realmente fácil, mesmo para quem não usa apps?</h3>
+            <svg class="w-6 h-6 text-[#1a202c]/50 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <p class="p-6 pt-0 text-[#1a202c]/80">Absolutamente! Se você sabe mandar uma mensagem no WhatsApp, você sabe usar o NutriBot. Não precisa baixar nada, nem criar senhas. É tão simples quanto conversar com um amigo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="relative py-20 bg-green-900">
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <h2 class="text-white text-3xl md:text-4xl font-bold">Pronto para transformar sua alimentação sem complicação?</h2>
+      <p class="mt-4 text-lg text-[#f0f9ff]/70 max-w-2xl mx-auto">Comece sua jornada hoje mesmo. O primeiro passo é o mais importante e o mais simples.</p>
+      <a href="https://wa.me/5511999998888?text=Ol%C3%A1!%20Quero%20transformar%20minha%20alimenta%C3%A7%C3%A3o%20com%20o%20NutriBot!"
+         target="_blank"
+         class="inline-block mt-8 px-10 py-4 bg-white text-green-900 font-bold text-lg rounded-full shadow-lg hover:opacity-90 transform hover:scale-105 transition-all duration-300">Começar no WhatsApp</a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqToggles = document.querySelectorAll('[data-faq-toggle]');
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const answer = this.nextElementSibling;
+          const icon = this.querySelector('svg');
+          const isOpening = !answer.style.maxHeight || answer.style.maxHeight === '0px';
+          faqToggles.forEach(otherToggle => {
+            otherToggle.nextElementSibling.style.maxHeight = '0px';
+            otherToggle.querySelector('svg').style.transform = 'rotate(0deg)';
+          });
+          if (isOpening) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 
