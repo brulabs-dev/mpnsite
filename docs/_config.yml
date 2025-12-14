@@ -1,0 +1,14 @@
+title: "Manda pra Nutri - Nutrição com IA de um jeito humano"
+description: "Acompanhe sua nutrição com uma IA que conversa como um amigo. Envie uma foto no WhatsApp ou Telegram e receba um feedback humanizado e preciso."
+url: "https://mandapranutri.com.br"
+baseurl: ""
+logo: /images/logo_mandapranutri.webp
+image: /images/how-it-works-1.webp
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Permalinks
+permalink: /:title/

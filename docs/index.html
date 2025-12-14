@@ -1,117 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>manda pra nutri — Nutrição com IA de um jeito humano</title>
-  <link rel="icon" href="images/profile.webp" type="image/webp">
-  <meta name="description" content="Acompanhe sua nutrição com uma IA que conversa como um amigo. Envie uma foto no WhatsApp ou Telegram e receba um feedback humanizado e preciso." />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
-                    serif: ['Merriweather', 'serif'],
-                    handwriting: ['Caveat', 'cursive'],
-                },
-                colors: {
-                    paper: '#fdfbf7',
-                    ink: '#2d2a26',
-                    accent: '#059669', // Emerald
-                    'accent-dark': '#047857',
-                    'accent-light': '#d1fae5',
-                },
-                backgroundImage: {
-                    'paper-pattern': "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\" opacity=\"0.05\"/%3E%3C/svg%3E')",
-                },
-                boxShadow: {
-                    'paper': '0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.02)',
-                    'paper-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
-                }
-            }
-        }
-    }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-  <style>
-    html, body { 
-        scroll-behavior: smooth; 
-        -webkit-font-smoothing: antialiased;
-    }
-    
-    /* Efeito de marcador de texto */
-    .marker-highlight {
-        position: relative;
-        display: inline-block;
-        z-index: 10;
-    }
-    .marker-highlight::after {
-        content: '';
-        position: absolute;
-        bottom: 2px;
-        left: -4px;
-        right: -4px;
-        height: 12px;
-        background-color: rgba(167, 243, 208, 0.6); /* Emerald-200 */
-        transform: rotate(-1deg);
-        z-index: -1;
-    }
-  </style>
-</head>
-<body class="bg-paper text-ink bg-paper-pattern">
-
-  <!-- Header -->
-  <nav class="sticky top-0 z-50 bg-emerald-950 backdrop-blur-md border-b border-emerald-900">
-    <div class="container mx-auto px-6">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2">
-           <img src="images/logo_mandapranutri.webp" alt="Logo manda pra nutri" class="h-10 w-auto" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-           <span class="font-serif font-bold text-xl text-white hidden">manda pra nutri</span>
-        </a>
-        
-        <!-- Navegação Desktop -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#funcionalidades" class="text-sm text-emerald-100 hover:text-white font-medium font-sans transition-colors">Como Funciona</a>
-          <a href="#para-quem-e" class="text-sm text-emerald-100 hover:text-white font-medium font-sans transition-colors">Para quem é</a>
-          <a href="#planos" class="text-sm text-emerald-100 hover:text-white font-medium font-sans transition-colors">Planos</a>
-          <a href="#faq" class="text-sm text-emerald-100 hover:text-white font-medium font-sans transition-colors">FAQ</a>
-          
-          <!-- Botão Entrar -->
-          <a href="https://app.mandapranutri.com.br/conta/login" class="text-sm font-serif font-bold text-white hover:text-emerald-200 transition-colors mr-2">Entrar</a>
-          
-          <!-- CTA Principal -->
-          <a href="https://app.mandapranutri.com.br/planos/" class="text-sm inline-flex items-center justify-center px-6 py-2.5 rounded-xl bg-accent text-white font-serif font-bold hover:bg-emerald-600 transition shadow-lg shadow-emerald-900/50 transform hover:-translate-y-0.5">
-            Assinar Agora
-          </a>
-        </div>
-
-        <!-- Botão Mobile -->
-        <div class="md:hidden flex items-center gap-4">
-             <a href="https://app.mandapranutri.com.br/conta/login" class="text-sm font-serif font-bold text-white">Entrar</a>
-             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white focus:outline-none">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-             </button>
-        </div>
-      </div>
-    </div>
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden bg-emerald-950 border-b border-emerald-900">
-      <a href="#funcionalidades" class="block py-3 px-6 text-sm text-emerald-100 font-sans border-b border-emerald-900 hover:bg-emerald-900">Como Funciona</a>
-      <a href="#para-quem-e" class="block py-3 px-6 text-sm text-emerald-100 font-sans border-b border-emerald-900 hover:bg-emerald-900">Para quem é</a>
-      <a href="#planos" class="block py-3 px-6 text-sm text-emerald-100 font-sans border-b border-emerald-900 hover:bg-emerald-900">Planos</a>
-      <a href="#faq" class="block py-3 px-6 text-sm text-emerald-100 font-sans border-b border-emerald-900 hover:bg-emerald-900">FAQ</a>
-      <a href="https://app.mandapranutri.com.br/planos/" class="block py-4 px-6 text-sm text-center text-white bg-accent font-bold font-serif">Quero Assinar</a>
-    </div>
-  </nav>
+---
+layout: default
+title: manda pra nutri — Nutrição com IA de um jeito humano
+is_home: true
+---
 
   <!-- 1. Hero Section -->
   <header class="py-16 md:py-24 relative overflow-hidden">
@@ -184,7 +75,7 @@
                 <!-- Chat Area -->
                 <div class="flex-1 bg-[#e5ddd5] p-4 overflow-y-auto relative" id="hero-chat-container">
                      <!-- Background Pattern for Chat -->
-                     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%239C92AC\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+                     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%239C92AC\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
                      <div class="relative z-10 flex flex-col gap-4 pt-4" id="chat-messages">
                          <!-- Messages will appear here -->
                      </div>
@@ -430,7 +321,7 @@
           <div class="relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
               <div class="absolute inset-0 bg-stone-200 rounded-2xl transform translate-x-2 translate-y-2"></div>
               <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white relative bg-white">
-                <img src="images/how-it-works-1.webp" alt="Como funciona" class="w-full h-auto object-cover">
+                <img src="images/how-it-works-1.webp" alt="Demonstração do aplicativo analisando uma foto de refeição e mostrando calorias" class="w-full h-auto object-cover">
               </div>
           </div>
         </div>
@@ -751,87 +642,3 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="py-16 bg-ink text-paper">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-        <div class="max-w-sm">
-          <div class="flex items-center gap-2 mb-4">
-             <!-- <img src="images/logo_mandapranutri.webp" alt="Logo" class="h-8 brightness-0 invert"> -->
-             <span class="font-serif font-bold text-xl text-paper">manda pra nutri</span>
-          </div>
-          <p class="text-xs text-stone-400 leading-relaxed font-sans">
-            Sua ferramenta de nutrição com IA que analisa suas refeições via WhatsApp ou Telegram e te ajuda a alcançar seus objetivos com consistência e clareza.
-          </p>
-        </div>
-        
-        <div class="flex gap-12 font-sans text-xs">
-          <ul class="space-y-3">
-            <li><a href="termos-de-uso.html" class="text-stone-400 hover:text-white transition-colors">Termos de uso</a></li>
-            <li><a href="privacidade.html" class="text-stone-400 hover:text-white transition-colors">Políticas de privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="border-t border-stone-800 mt-12 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <div class="flex flex-col gap-1 text-[10px] text-stone-500 font-sans">
-            <p>© 2025 <strong>manda pra nutri</strong>. Todos os direitos reservados.</p>
-            <p>BRULABS DESENVOLVIMENTO DE SOFTWARE E INTELIGENCIA ARTIFICIAL - CNPJ: 62.109.452/0001-63</p>
-            <p>Rua Mercúrio, 147, 205B. Florianópolis. CEP 88058-197</p>
-            <p>Contato: contato@mandapranutri.com.br</p>
-          </div>
-          <p class="text-[10px] text-stone-500 font-sans">Desenvolvido com 🥦 por BruLabs em Florianópolis</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Script para o Carrossel
-    document.addEventListener('DOMContentLoaded', () => {
-        // (O script do carrossel foi removido pois a seção de depoimentos foi removida)
-    });
-
-    // Script para o FAQ (Acordeão suave)
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqToggles = document.querySelectorAll('[data-faq-toggle]');
-      faqToggles.forEach(toggle => {
-        toggle.addEventListener('click', function () {
-          const answer = this.nextElementSibling;
-          const icon = this.querySelector('svg');
-          const isOpening = !answer.style.maxHeight || answer.style.maxHeight === '0px';
-          
-          // Fecha todos os outros para foco limpo
-          faqToggles.forEach(otherToggle => {
-            if (otherToggle !== this) {
-                otherToggle.nextElementSibling.style.maxHeight = '0px';
-                const otherIcon = otherToggle.querySelector('svg');
-                if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                // Remove destaque do pai
-                otherToggle.parentElement.classList.remove('border-emerald-200', 'shadow-sm');
-                otherToggle.classList.remove('bg-stone-50');
-            }
-          });
-
-          // Abre ou fecha o atual
-          if (isOpening) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-            if(icon) icon.style.transform = 'rotate(180deg)';
-            // Adiciona destaque visual ao item aberto
-            this.parentElement.classList.add('border-emerald-200', 'shadow-sm');
-            this.classList.add('bg-stone-50');
-          } else {
-            answer.style.maxHeight = '0px';
-            if(icon) icon.style.transform = 'rotate(0deg)';
-            this.parentElement.classList.remove('border-emerald-200', 'shadow-sm');
-            this.classList.remove('bg-stone-50');
-          }
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
